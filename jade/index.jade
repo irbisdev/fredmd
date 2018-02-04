@@ -1,0 +1,49 @@
+- var title = 'Fred Morozov - Front-End Developer'
+- var description = 'Hi. I\'m Fred, I make sites. Front-end developer located in Russia.'
+- var keywords = 'Developer, Front-End, Front-End Developer, React, Jade, LESS, CSS, HTML, React.js'
+
+- var github = 'irbisdev'
+- var telegram = 'fredmd'
+- var instagram = 'irbisdev'
+- var vkontakte = 'morozovfred'
+- var mail = 'morozov@fred.md'
+
+doctype html
+html
+	head
+		meta(charset="utf-8")
+
+		title= title
+		meta(name="description" content=description)
+		meta(name="keywords" content=keywords)
+
+		meta(property="og:title" content=title)
+		meta(property="og:url" content="https://fred.md/")
+		meta(property="og:description" content=description)
+		meta(property="og:image" content="https://fred.md/img/og.jpg")
+
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no")
+		meta(name="format-detection" content="telephone=no")
+
+		link(rel="stylesheet" type="text/css" href="css/style.css")
+
+	body
+		.page
+			.page--in
+				.page--title Fred Morozov
+				.page--socials
+					a(href='https://github.com/' + github).page--social: i.icon-gh
+					a(href='https://t.me/' + telegram).page--social: i.icon-tg
+					a(href='https://instagram.com/' + instagram).page--social: i.icon-ig
+					a(href='https://vk.com/' + vkontakte).page--social: i.icon-vk
+					a(href='mailto:' + mail).page--social: i.icon-em
+
+			.copyrights Photo by #[span F. Morozov] from #[span Milan, Italy]
+
+		// Global site tag (gtag.js) - Google Analytics
+		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-50201429-2")
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-50201429-2');

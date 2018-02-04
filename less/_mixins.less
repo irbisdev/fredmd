@@ -1,0 +1,94 @@
+.font (@size) {
+	font-size: @size;
+	line-height: @size;
+}
+
+.font (@size, @height) {
+	font-size: @size;
+	line-height: @height;
+}
+
+.font (@size, @height, @weight) {
+	font-size: @size;
+	line-height: @height;
+	font-weight: @weight;
+}
+
+.font (@size, @height, @weight, @family) {
+	font: @weight @size/@height @family;
+}
+
+.font (@style, @size, @height, @weight, @family) {
+	font: @style @weight @size/@height @family;
+}
+
+.display (@type) {
+	display: @type;
+}
+
+.display (@type) when (@type = inline-block) {
+	display: @type;
+	vertical-align: top;
+}
+
+.size (@width, @height: auto) {
+	width: @width;
+	height: @height;
+}
+
+.max-size (@width, @height: initial) {
+	max-width: @width;
+	max-height: @height;
+}
+
+.min-size (@width, @height: initial) {
+	min-width: @width;
+	min-height: @height;
+}
+
+.position (@type, @top: auto, @right: auto, @bottom: auto, @left: auto) {
+	position: @type;
+
+	top: @top;
+	right: @right;
+	bottom: @bottom;
+	left: @left;
+}
+
+.position-tl (@type, @top, @left) {
+	position: @type;
+
+	top: @top;
+	right: auto;
+	bottom: auto;
+	left: @left;
+}
+
+.icon (@symbol) {
+	content: @symbol;
+
+	font-family: 'icomoon'!important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.cols (@t, @n, @i: 0) when (@i =< @n) {
+	.col-@{t}-@{i} {
+		float: left;
+		padding: 0 10px;
+
+		.size ((@i * 100% / @n));
+	}
+
+	.col-@{t}-offset-@{i} { margin-right: (@i * 100% / @n); }
+	.col-@{t}-offset-l-@{i} { margin-left: (@i * 100% / @n); }
+
+	.cols (@t, @n, (@i + 1));
+}
