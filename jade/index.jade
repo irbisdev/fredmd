@@ -14,8 +14,8 @@
 - var vkontakte = 'morozovfred'
 - var mail      = 'morozov@fred.md'
 
-mixin social (icon, domain, username)
-	a(href=('https://' + domain + '/' + username) target="_blank").page--social: i(class='icon-' + icon)
+mixin social (icon, domain, username, ya_goal)
+	a(href=('https://' + domain + '/' + username) target="_blank" onclick='yaCounter47608978.reachGoal(\'' + ya_goal + '\');').page--social: i(class='icon-' + icon)
 
 doctype html
 html
@@ -43,12 +43,12 @@ html
 			.page--in
 				.page--title Fred Morozov
 				.page--socials
-					+social ('gh', 'github.com', github)
-					+social ('tg', 't.me', telegram)
-					+social ('ig', 'instagram.com', instagram)
-					+social ('vk', 'vk.com', vkontakte)
+					+social ('gh', 'github.com', github, 'open_github')
+					+social ('tg', 't.me', telegram, 'open_telegram')
+					+social ('ig', 'instagram.com', instagram, 'open_instagram')
+					+social ('vk', 'vk.com', vkontakte, 'open_vk')
 
-					a(href='mailto:' + mail).page--social: i.icon-em
+					a(href='mailto:' + mail onclick="yaCounter47608978.reachGoal('open_mail');").page--social: i.icon-em
 
 			.copyrights #[span Via Luigi Maria Brunelli, Milan, Italy]#[br] Photo by #[span F. Morozov]
 
