@@ -1,15 +1,39 @@
+// - Includes
+
 @import "_mixins.less";
 @import "_reset.less";
 @import "_fonts.less";
-@import "_colors.less";
 
-// --------
 
-	@screen-xs-max: 767px;
 
-	@media-xs-only: ~"(max-width: @{screen-xs-max})";
 
-// --------
+// - Fonts
+
+@import url(https://fonts.googleapis.com/css?family=Cuprum:400,700);
+
+@import "../fonts/icomoon/style.css";
+
+
+
+
+// - Colors
+
+@white: #ffffff;
+@black: #000000;
+
+
+
+
+// - Breakpoints
+
+@screen-xs-max: 767px;
+
+@media-xs-only: ~"(max-width: @{screen-xs-max})";
+
+
+
+
+// - Global
 
 html { min-width: auto;
 	.size (auto, 100%);
@@ -31,7 +55,52 @@ body {
 	*, *:before, *:after { box-sizing: border-box; }
 }
 
-// --------
+
+
+
+// - Components
+
+.btn {
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	background: @white;
+	border-radius: 45px;
+	color: @black;
+	text-decoration: none;
+	transition: 300ms all ease;
+	box-shadow: 0 10px 20px 0 fade(@black, 20);
+
+	.display (inline-block);
+	.font (20px, 22px, 400);
+
+	@media @media-xs-only { padding: 8px 20px;
+		.font (17px, 20px);
+	}
+
+	i { margin: 0 10px 0 0;
+		.display (inline-block);
+		.font (16px, 22px);
+
+		@media @media-xs-only { margin: 0 10px 0 0;
+			.font (14px, 20px);
+		}
+	}
+
+	&:hover { background: fade(@white, 70); }
+	&.is-block {
+		padding-left: 0;
+		padding-right: 0;
+
+		.display (block);
+		.size (100%);
+	}
+}
+
+
+
+
+// - Blocks
 
 .page {
 	background: url(../img/bg.jpg) center center no-repeat;
@@ -55,19 +124,20 @@ body {
 		.position (absolute, 50%, 30px, auto, 30px);
 	}
 
-	&--title { margin: 0 0 15px;
-		.font (100px, 120px, 700);
-
-		@media @media-xs-only { margin: 0 0 25px;
-			.font (60px, 60px);
-		}
+	&--title { .font (100px, 120px, 700);
+		@media @media-xs-only { .font (60px, 60px); }
 	}
 
-	&--socials { .font (0); }
+	&--socials { margin: 24px 0 40px;
+		.font (0);
+
+		@media @media-xs-only { margin: 20px 0 18px; }
+	}
+
 	&--social {
-		margin: 0 5px;
+		margin: 0 10px;
 		padding: 0 10px;
-		color: fade(@white, 40);
+		color: @white;
 		text-decoration: none;
 		transition: 300ms all ease;
 
@@ -75,14 +145,16 @@ body {
 		.font (26px, 50px);
 
 		@media @media-xs-only {
-			margin: 0 1px;
-			color: @white;
+			padding: 0 13px;
+			margin: 0;
 
-			.font (20px, 50px);
+			.font (22px, 50px);
 		}
 
-		&:hover { color: @white; }
+		&:hover { color: fade(@white, 40); }
 	}
+
+	&--btn { text-align: center; }
 }
 
 .copyrights {
@@ -93,10 +165,15 @@ body {
 	.position (absolute, auto, 15px, 10px, 15px);
 	.font (14px, 20px);
 
+	@media @media-xs-only { .font (13px, 20px); }
+
 	span { color: @white; }
 }
 
-// --------
+
+
+
+// - Responsive hacks
 
 .visible-xs { .display (none); }
 
