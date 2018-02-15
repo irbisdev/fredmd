@@ -1,4 +1,4 @@
-- var css_version = 4
+- var css_version = 5
 
 - var title = 'Fred Morozov - Front End Developer'
 
@@ -13,13 +13,11 @@
 - var github    = 'irbisdev'
 - var telegram  = 'fredmd'
 - var instagram = 'irbisdev'
-- var vkontakte = 'fred.morozov'
-- var mail      = 'morozov@fred.md'
-
-- var resume = 'https://fred.md/Fred_Morozov_Resume.pdf'
+- var email     = 'morozov@fred.md'
+- var resume    = 'https://fred.md/Fred_Morozov_Resume.pdf'
 
 mixin social (icon, domain, username)
-	a(href=('https://' + domain + '/' + username) target="_blank").page--social: i(class='icon-' + icon)
+	a(href=('https://' + domain + '/' + username) target="_blank").social: i(class='icon-' + icon)
 
 doctype html
 html
@@ -50,9 +48,8 @@ html
 					+social ('gh', 'github.com', github)
 					+social ('tg', 'telegram.me', telegram)
 					+social ('ig', 'instagram.com', instagram)
-					+social ('vk', 'vk.com', vkontakte)
 
-					a(href='mailto:' + mail).page--social: i.icon-em
+					a(href='mailto:' + email).social: i.icon-em
 
 				.page--btn: a(href=resume target="_blank").btn #[i.icon-pdf]Open resume
 

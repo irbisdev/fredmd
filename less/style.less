@@ -133,27 +133,28 @@ body {
 		@media @media-xs-only { margin: 20px 0 18px; }
 	}
 
-	&--social {
-		margin: 0 10px;
-		padding: 0 10px;
-		color: @white;
-		text-decoration: none;
-		transition: 300ms all ease;
+	&--btn { text-align: center; }
+}
 
-		.display (inline-block);
-		.font (26px, 50px);
+.social {
+	margin: 0 10px;
+	padding: 0 10px;
+	color: @white;
+	text-decoration: none;
+	transition: 300ms all ease;
 
-		@media @media-xs-only {
-			padding: 0 13px;
-			margin: 0;
+	.display (inline-block);
+	.position (relative);
+	.font (26px, 50px);
 
-			.font (22px, 50px);
-		}
+	@media @media-xs-only {
+		padding: 0 13px;
+		margin: 0;
 
-		&:hover { color: fade(@white, 40); }
+		.font (22px, 50px);
 	}
 
-	&--btn { text-align: center; }
+	&:hover { color: fade(@white, 40); }
 }
 
 .copyrights {
