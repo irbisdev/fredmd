@@ -26,42 +26,21 @@ html
 		.page
 			+header
 
-			.photos
-				+photo ('01', 'Via Dogana', 'Milan')
-				+photo ('02', 'Campo San Rocco', 'Venice')
+			.tiles: .row
+				.col-xs-12.col-sm-6: +tile (resume, '01', 'View resume').is-first
+				.col-xs-12.col-sm-6: +tile (projects, '02', 'View projects')
 
-			.works
-				.works--item: +work
-				.works--item: +work
-				.works--item: +work
-				.works--item: +work
+			.photos: .row
+				.col-xs-12.col-sm-6: +photo ('01', 'Via Dogana', 'Milan')
+				.col-xs-12.col-sm-6: +photo ('02', 'Campo San Rocco', 'Venice')
 
-				.works--item: +work
-				.works--item: +work
-				.works--item: +work
-				.works--item: +work
+			.form: form(method="POST" action=feedback).form--in: .row
+				.col-xs-12.col-sm-6: .form--field: input(type="text" autocomplete="name" placeholder="Full name").input
+				.col-xs-12.col-sm-6: .form--field: input(type="text" autocomplete="email" placeholder="E-mail").input
+				.col-xs-12
+					.form--field: textarea(placeholder="Message").textarea
+					.form--submit: button(type="submit").btn.is-large.is-block Send letter
 
-				.works--item: +work
-				.works--item: +work
-				.works--item: +work
-				.works--item: +work
-
-				.works--item: +work
-				.works--item: +work
-				.works--item: +work
-				.works--item: +work
-
-				.works--item: +work
-				.works--item: +work
-				.works--item: +work
-				.works--item: +work
-
-				.works--item: +work
-				.works--item: +work
-				.works--item: +work
-				.works--item: +work
-
-			.form feedback form
 
 		// Yandex.Metrika counter
 		script(type="text/javascript").

@@ -1,12 +1,12 @@
 mixin header
 	header.header&attributes(attributes)
-		.header--socials
+		.header--btns.left
 			+btn-group ([{url: github, caption: 'github'}, {url: telegram, caption: 'telegram'}])
 
 		.header--logo= name
 			span= position
 
-		.header--btn: a(href='mailto:' + email).btn morozov@fred.md
+		.header--btns.right: a(href='mailto:' + email).btn morozov@fred.md
 
 mixin btn-group (items)
 	.btn-group
@@ -14,11 +14,12 @@ mixin btn-group (items)
 			a(href='https://' + item.url target="_blank")= item.caption
 
 mixin photo (photoID, street, city)
-	.photos--item(style='background-image: url(img/photo-' + photoID + '.jpg)')&attributes(attributes)
+	.photo(style='background-image: url(img/photo-' + photoID + '.jpg)')&attributes(attributes)
 		+copyrights (street, city)
 
 mixin copyrights (street, city)
 	.copyrights&attributes(attributes) #[span #{street}]#[br]#{city}, Italy
 
-mixin work
-	a(href="#").work&attributes(attributes)
+mixin tile (link, photoID, caption)
+	a(href=link style='background-image: url(img/tile-' + photoID + '.jpg)').tile&attributes(attributes)
+		span= caption

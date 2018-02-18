@@ -17,72 +17,59 @@
   <body>
     <div class="page">
       <header class="header">
-        <div class="header--socials">
+        <div class="header--btns left">
           <div class="btn-group"><a href="https://github.com/irbisdev" target="_blank">github</a><a href="https://telegram.me/fredmd" target="_blank">telegram</a>
           </div>
         </div>
         <div class="header--logo">Fred Morozov<span>Front End Developer</span></div>
-        <div class="header--btn"><a class="btn" href="mailto:morozov@fred.md">morozov@fred.md</a></div>
+        <div class="header--btns right"><a class="btn" href="mailto:morozov@fred.md">morozov@fred.md</a></div>
       </header>
+      <div class="tiles">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6"><a class="tile is-first" href="/resume/" style="background-image: url(img/tile-01.jpg);"><span>View resume</span></a>
+          </div>
+          <div class="col-xs-12 col-sm-6"><a class="tile" href="/projects/" style="background-image: url(img/tile-02.jpg);"><span>View projects</span></a>
+          </div>
+        </div>
+      </div>
       <div class="photos">
-        <div class="photos--item" style="background-image: url(img/photo-01.jpg);">
-          <div class="copyrights"><span>Via Dogana</span><br/>Milan, Italy</div>
-        </div>
-        <div class="photos--item" style="background-image: url(img/photo-02.jpg);">
-          <div class="copyrights"><span>Campo San Rocco</span><br/>Venice, Italy</div>
-        </div>
-      </div>
-      <div class="works">
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
-        </div>
-        <div class="works--item"><a class="work" href="#"></a>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div class="photo" style="background-image: url(img/photo-01.jpg);">
+              <div class="copyrights"><span>Via Dogana</span><br/>Milan, Italy</div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="photo" style="background-image: url(img/photo-02.jpg);">
+              <div class="copyrights"><span>Campo San Rocco</span><br/>Venice, Italy</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="form">feedback form</div>
+      <div class="form">
+        <form class="form--in" method="POST" action="https://api.fred.md/mail">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <div class="form--field">
+                <input class="input" type="text" autocomplete="name" placeholder="Full name">
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <div class="form--field">
+                <input class="input" type="text" autocomplete="email" placeholder="E-mail">
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="form--field">
+                <textarea class="textarea" placeholder="Message"></textarea>
+              </div>
+              <div class="form--submit">
+                <button class="btn is-large is-block" type="submit">Send letter</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
     <!-- Yandex.Metrika counter-->
     <script type="text/javascript">
