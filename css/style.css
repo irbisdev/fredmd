@@ -943,6 +943,43 @@ body *:after {
   max-width: 250px;
   max-height: initial;
 }
+.p-page {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.p-header {
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: auto;
+  height: 60px;
+}
+.p-frame {
+  z-index: 1;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: auto;
+  height: -webkit-calc(100% - 60px);
+  height: calc(100% - 60px);
+}
+.p-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .visible-xs,
 .visible-sm {
   display: none;

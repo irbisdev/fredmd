@@ -341,6 +341,38 @@ body {
 
 
 
+
+// - Projects page
+
+.p-page {
+	.position (fixed, 0, 0, 0, 0);
+}
+
+.p-header {
+	background: @white;
+	box-shadow: 0 0 20px 0 fade(@black, 15);
+	border-bottom: 1px solid fade(@black, 10);
+	z-index: 2;
+
+	.position (relative);
+	.size (auto, 60px);
+}
+
+.p-frame {
+	z-index: 1;
+
+	.position (relative);
+	.size (auto, ~'calc(100% - 60px)');
+
+	iframe {
+		.display (block);
+		.size (100%, 100%);
+	}
+}
+
+
+
+
 // - Responsive hacks
 
 .visible-xs,

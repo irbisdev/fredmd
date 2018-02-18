@@ -1,12 +1,11 @@
 include ./_variables.jade
-include ./_components.jade
 
 doctype html
 html
 	head
 		meta(charset="utf-8")
 
-		title= title
+		title Projects — #{name}
 		meta(name="description" content=meta_description)
 		meta(name="keywords" content=meta_keywords)
 
@@ -23,26 +22,24 @@ html
 		link(rel="stylesheet" type="text/css" href='css/style.css?ver=' + css_version)
 
 	body
-		.page
-			+header
+		.p-page#app
+			.p-header(v-if="dataLoaded")
+				.p-header--project: select(v-model="selectedProject" @change="selectPage")
+					option(value="-1" disabled selected) Выберите проект
+					option(v-for="(project, index) in projects" v-bind:value="index") {{ project.name }}
 
-			.tiles: .row
-				.col-xs-12.col-sm-6: +tile (resume, '01', 'View resume').is-first
-				.col-xs-12.col-sm-6: +tile (projects, '02', 'View projects')
+				.p-header--page: select(v-if="canRender()" v-model="selectedPage")
+					option(v-for="page in projects[selectedProject].pages" v-bind:value="page") {{ page }}
 
-			.photos: .row
-				.col-xs-12.col-sm-6: +photo ('01', 'Via Dogana', 'Milan')
-				.col-xs-12.col-sm-6: +photo ('02', 'Campo San Rocco', 'Venice')
-
-			.form: form(method="POST" action=feedback).form--in: .row
-				.col-xs-12.col-sm-6: .form--field: input(type="text" autocomplete="name" placeholder="Full name").input
-				.col-xs-12.col-sm-6: .form--field: input(type="text" autocomplete="email" placeholder="E-mail").input
-				.col-xs-12
-					.form--field: textarea(placeholder="Message").textarea
-					.form--submit: button(type="submit").btn.is-large.is-block Send letter
+			.p-frame(v-if="dataLoaded")
+				iframe(v-if="canRender()" v-bind:src="getPage()")
 
 		// Yandex.Metrika counter
 		script(type="text/javascript").
 			(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47608978 = new Ya.Metrika({ id:47608978, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");
 
 		noscript: div: img(src="https://mc.yandex.ru/watch/47608978" style="position:absolute; left:-9999px;" alt="")
+
+		script(type="text/javascript" src="examples/vue.js")
+		script(type="text/javascript" src="examples/vue-resource.js")
+		script(type="text/javascript" src="examples/app.js")

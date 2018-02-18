@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Projects — Fred Morozov</title>
+    <meta name="description" content="Hi. I'm Fred, I make sites. Front End developer located in Russia.">
+    <meta name="keywords" content="Developer, Front End, Front End Developer, React, Jade, LESS, CSS, HTML, React.js">
+    <meta property="og:title" content="Fred Morozov — Front End Developer">
+    <meta property="og:url" content="https://fred.md/">
+    <meta property="og:description" content="Hi. I'm Fred, I make sites. Front End developer located in Russia.">
+    <meta property="og:image" content="https://fred.md/img/og.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/style.css?ver=6">
+  </head>
+  <body>
+    <div class="p-page" id="app">
+      <div class="p-header" v-if="dataLoaded">
+        <div class="p-header--project">
+          <select v-model="selectedProject" @change="selectPage">
+            <option value="-1" disabled selected>Выберите проект</option>
+            <option v-for="(project, index) in projects" v-bind:value="index">{{ project.name }}</option>
+          </select>
+        </div>
+        <div class="p-header--page">
+          <select v-if="canRender()" v-model="selectedPage">
+            <option v-for="page in projects[selectedProject].pages" v-bind:value="page">{{ page }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="p-frame" v-if="dataLoaded">
+        <iframe v-if="canRender()" v-bind:src="getPage()"></iframe>
+      </div>
+    </div>
+    <!-- Yandex.Metrika counter-->
+    <script type="text/javascript">
+      (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47608978 = new Ya.Metrika({ id:47608978, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");
+      
+    </script>
+    <noscript>
+      <div><img src="https://mc.yandex.ru/watch/47608978" style="position:absolute; left:-9999px;" alt=""></div>
+    </noscript>
+    <script type="text/javascript" src="examples/vue.js"></script>
+    <script type="text/javascript" src="examples/vue-resource.js"></script>
+    <script type="text/javascript" src="examples/app.js"></script>
+  </body>
+</html>
