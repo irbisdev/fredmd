@@ -1,0 +1,24 @@
+mixin header
+	header.header&attributes(attributes)
+		.header--socials
+			+btn-group ([{url: github, caption: 'github'}, {url: telegram, caption: 'telegram'}])
+
+		.header--logo= name
+			span= position
+
+		.header--btn: a(href='mailto:' + email).btn morozov@fred.md
+
+mixin btn-group (items)
+	.btn-group
+		each item in items
+			a(href='https://' + item.url target="_blank")= item.caption
+
+mixin photo (photoID, street, city)
+	.photos--item(style='background-image: url(img/photo-' + photoID + '.jpg)')&attributes(attributes)
+		+copyrights (street, city)
+
+mixin copyrights (street, city)
+	.copyrights&attributes(attributes) #[span #{street}]#[br]#{city}, Italy
+
+mixin work
+	a(href="#").work&attributes(attributes)

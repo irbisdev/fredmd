@@ -1,23 +1,5 @@
-- var css_version = 5
-
-- var title = 'Fred Morozov - Front End Developer'
-
-- var meta_description = 'Hi. I\'m Fred, I make sites. Front End developer located in Russia.'
-- var meta_keywords    = 'Developer, Front End, Front End Developer, React, Jade, LESS, CSS, HTML, React.js'
-
-- var og_title       = title
-- var og_url         = 'https://fred.md/'
-- var og_description = meta_description
-- var og_image       = 'https://fred.md/img/og.jpg'
-
-- var github    = 'irbisdev'
-- var telegram  = 'fredmd'
-- var instagram = 'irbisdev'
-- var email     = 'morozov@fred.md'
-- var resume    = 'https://fred.md/Fred_Morozov_Resume.pdf'
-
-mixin social (icon, domain, username)
-	a(href=('https://' + domain + '/' + username) target="_blank").social: i(class='icon-' + icon)
+include ./_variables.jade
+include ./_components.jade
 
 doctype html
 html
@@ -42,18 +24,44 @@ html
 
 	body
 		.page
-			.page--in
-				.page--title Fred Morozov
-				.page--socials
-					+social ('gh', 'github.com', github)
-					+social ('tg', 'telegram.me', telegram)
-					+social ('ig', 'instagram.com', instagram)
+			+header
 
-					a(href='mailto:' + email).social: i.icon-em
+			.photos
+				+photo ('01', 'Via Dogana', 'Milan')
+				+photo ('02', 'Campo San Rocco', 'Venice')
 
-				.page--btn: a(href=resume target="_blank").btn #[i.icon-pdf]Open resume
+			.works
+				.works--item: +work
+				.works--item: +work
+				.works--item: +work
+				.works--item: +work
 
-			.copyrights #[span Via Luigi Maria Brunelli, Milan, Italy]#[br] Photo by #[span F. Morozov]
+				.works--item: +work
+				.works--item: +work
+				.works--item: +work
+				.works--item: +work
+
+				.works--item: +work
+				.works--item: +work
+				.works--item: +work
+				.works--item: +work
+
+				.works--item: +work
+				.works--item: +work
+				.works--item: +work
+				.works--item: +work
+
+				.works--item: +work
+				.works--item: +work
+				.works--item: +work
+				.works--item: +work
+
+				.works--item: +work
+				.works--item: +work
+				.works--item: +work
+				.works--item: +work
+
+			.form feedback form
 
 		// Yandex.Metrika counter
 		script(type="text/javascript").
