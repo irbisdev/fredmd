@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="p-page" id="app">
-      <div class="p-header" v-if="dataLoaded">
+      <div class="p-header" v-if="dataLoaded"><a class="p-header--back" href="/">Return to Fred.md</a>
         <div class="p-header--project">
           <select v-model="selectedProject" @change="selectPage">
             <option value="-1" disabled selected>Выберите проект</option>

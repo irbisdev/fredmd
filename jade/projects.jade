@@ -24,6 +24,8 @@ html
 	body
 		.p-page#app
 			.p-header(v-if="dataLoaded")
+				a(href=home).p-header--back Return to Fred.md
+
 				.p-header--project: select(v-model="selectedProject" @change="selectPage")
 					option(value="-1" disabled selected) Выберите проект
 					option(v-for="(project, index) in projects" v-bind:value="index") {{ project.name }}

@@ -961,8 +961,26 @@ body *:after {
   right: auto;
   bottom: auto;
   left: auto;
+  *zoom: 1;
   width: auto;
   height: 60px;
+}
+.p-header:after {
+  clear: both;
+}
+.p-header:before,
+.p-header:after {
+  content: " ";
+  display: table;
+}
+.p-header--back {
+  float: left;
+}
+.p-header--project {
+  float: left;
+}
+.p-header--page {
+  float: left;
 }
 .p-frame {
   z-index: 1;
