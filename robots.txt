@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /projects.html
 Disallow: /projects
 Disallow: /projects/
+Disallow: /projects/index.html
