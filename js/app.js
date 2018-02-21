@@ -1,5 +1,5 @@
 var app = new Vue({
-		el: '#app',
+		el: '#projects',
 		data: {
 			server: 'https://api.fred.md',
 

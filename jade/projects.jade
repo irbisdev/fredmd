@@ -1,4 +1,5 @@
 include ./_variables.jade
+include ./_components.jade
 
 doctype html
 html
@@ -22,7 +23,7 @@ html
 		link(rel="stylesheet" type="text/css" href='css/style.css?ver=' + css_version)
 
 	body
-		.p-page#app
+		.p-page#projects
 			.p-header(v-if="dataLoaded")
 				a(href=home).p-header--back Return to Fred.md
 
@@ -36,12 +37,8 @@ html
 			.p-frame(v-if="dataLoaded")
 				iframe(v-if="canRender()" v-bind:src="getPage()")
 
-		// Yandex.Metrika counter
-		script(type="text/javascript").
-			(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47608978 = new Ya.Metrika({ id:47608978, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");
+		+yandex-counter
 
-		noscript: div: img(src="https://mc.yandex.ru/watch/47608978" style="position:absolute; left:-9999px;" alt="")
-
-		script(type="text/javascript" src="examples/vue.js")
-		script(type="text/javascript" src="examples/vue-resource.js")
-		script(type="text/javascript" src="examples/app.js")
+		script(type="text/javascript" src="js/vue.js")
+		script(type="text/javascript" src="js/vue-resource.js")
+		script(type="text/javascript" src="js/app.js")
