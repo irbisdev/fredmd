@@ -69,17 +69,17 @@
           <div class="row">
             <div class="col-xs-12 col-sm-6">
               <div class="form--field">
-                <input class="input" type="text" autocomplete="name" placeholder="Full name">
+                <input class="input" type="text" name="name" autocomplete="name" placeholder="Your name">
               </div>
             </div>
             <div class="col-xs-12 col-sm-6">
               <div class="form--field">
-                <input class="input" type="text" autocomplete="email" placeholder="E-mail">
+                <input class="input" type="text" name="mail" autocomplete="email" placeholder="Your E-mail">
               </div>
             </div>
             <div class="col-xs-12">
               <div class="form--field">
-                <textarea class="textarea" placeholder="Message"></textarea>
+                <textarea class="textarea" name="text" placeholder="Message"></textarea>
               </div>
               <div class="form--submit">
                 <button class="btn is-large is-block" type="submit">Send letter</button>
@@ -97,5 +97,31 @@
     <noscript>
       <div><img src="https://mc.yandex.ru/watch/47608978" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+      
+      	$('.form--in').on('submit', function (e) {
+      		e.preventDefault();
+      
+      		var form = $(this);
+      
+      		$.ajax({
+      			url: form.attr('action'),
+      			method: form.attr('method'),
+      			data: form.serialize(),
+      			dataType: 'text',
+      
+      			success: function (r) {
+      				form.closest('.form').addClass('is-success');
+      				form.html('Thank you! I will write to you shortly.');
+      			}
+      		});
+      
+      		return false;
+      	});
+      
+      });
+    </script>
   </body>
 </html>

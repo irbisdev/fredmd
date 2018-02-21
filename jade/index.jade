@@ -23,10 +23,36 @@ html(lang="en")
 				.col-xs-12.col-sm-6: +photo ('02', 'Campo San Rocco', 'Venice')
 
 			.form: form(method="POST" action=feedback).form--in: .row
-				.col-xs-12.col-sm-6: .form--field: input(type="text" autocomplete="name" placeholder="Full name").input
-				.col-xs-12.col-sm-6: .form--field: input(type="text" autocomplete="email" placeholder="E-mail").input
+				.col-xs-12.col-sm-6: .form--field: input(type="text" name="name" autocomplete="name" placeholder="Your name").input
+				.col-xs-12.col-sm-6: .form--field: input(type="text" name="mail" autocomplete="email" placeholder="Your E-mail").input
 				.col-xs-12
-					.form--field: textarea(placeholder="Message").textarea
+					.form--field: textarea(name="text" placeholder="Message").textarea
 					.form--submit: button(type="submit").btn.is-large.is-block Send letter
 
 		+yandex-counter
+
+		script(type="text/javascript" src="/js/jquery-1.11.1.min.js")
+		script.
+			$(document).ready(function () {
+
+				$('.form--in').on('submit', function (e) {
+					e.preventDefault();
+
+					var form = $(this);
+
+					$.ajax({
+						url: form.attr('action'),
+						method: form.attr('method'),
+						data: form.serialize(),
+						dataType: 'text',
+
+						success: function (r) {
+							form.closest('.form').addClass('is-success');
+							form.html('Thank you! I will write to you shortly.');
+						}
+					});
+
+					return false;
+				});
+
+			});
