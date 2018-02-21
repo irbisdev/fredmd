@@ -15,21 +15,22 @@
     <link rel="stylesheet" type="text/css" href="css/style.css?ver=6"/>
   </head>
   <body>
-    <div class="p-page" id="projects">
-      <div class="p-header" v-if="dataLoaded"><a class="p-header--back" href="/">Return to Fred.md</a>
-        <div class="p-header--project">
+    <div class="projects" id="projects">
+      <div class="toolbox" v-if="dataLoaded"><a class="toolbox--back" href="/">Return to Fred.md</a>
+        <div class="toolbox--in">
+          <div class="toolbox--label">Project:</div>
           <select v-model="selectedProject" @change="selectPage">
-            <option value="-1" disabled selected>Выберите проект</option>
             <option v-for="(project, index) in projects" v-bind:value="index">{{ project.name }}</option>
           </select>
         </div>
-        <div class="p-header--page">
-          <select v-if="canRender()" v-model="selectedPage">
+        <div class="toolbox--in" v-if="canRender()">
+          <div class="toolbox--label">Page:</div>
+          <select v-model="selectedPage">
             <option v-for="page in projects[selectedProject].pages" v-bind:value="page">{{ page }}</option>
           </select>
         </div>
       </div>
-      <div class="p-frame" v-if="dataLoaded">
+      <div class="frame" v-if="dataLoaded">
         <iframe v-if="canRender()" v-bind:src="getPage()"></iframe>
       </div>
     </div>

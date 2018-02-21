@@ -51,7 +51,7 @@ body {
 	.min-size (320px);
 	.position (relative);
 
-	input, textarea, button { font-family: 'Cuprum', arial, sans-serif; }
+	input, textarea, button, select, option { font-family: 'Cuprum', arial, sans-serif; }
 	*, *:before, *:after { box-sizing: border-box; }
 }
 
@@ -318,7 +318,7 @@ body {
 
 .form {
 	text-align: center;
-	padding: 140px 0;
+	padding: 140px 0 180px;
 
 	&--in {
 		margin: 0 auto;
@@ -342,34 +342,78 @@ body {
 
 // - Projects page
 
-.p-page {
+.projects {
 	.position (fixed, 0, 0, 0, 0);
 }
 
-.p-header {
-	background: @white;
-	box-shadow: 0 0 20px 0 fade(@black, 15);
-	border-bottom: 1px solid fade(@black, 10);
+.toolbox {
+	background: #262626;
 	z-index: 2;
+	box-shadow: 0 10px 20px 0 fade(@black, 20);
 
 	.position (relative);
-	.clearfix ();
-	.size (auto, 60px);
+	.display (flex);
+	.size (auto, 70px);
 
 	&--back {
-		float: left;
+		color: @white;
+		text-decoration: none;
+		padding: 20px 45px;
+		background: url(../icons/back.svg) 20px 29px no-repeat;
+		background-size: auto 10px;
+		transition: 300ms all ease;
+		border-right: 1px solid fade(@white, 10);
+
+		.display (block);
+		.font (18px, 30px);
+
+		&:hover {
+			background-color: fade(@white, 10);
+		}
 	}
 
-	&--project {
-		float: left;
+	&--in {
+		color: @white;
+		border-right: 1px solid fade(@white, 10);
+
+		.size (250px);
+
+		select {
+			appearance: none;
+			border: none;
+			background: url(../icons/down.svg) right center no-repeat;
+			background-size: auto 6px;
+			color: @white;
+			border-radius: 0;
+			padding: 11px 15px 9px;
+			transition: 300ms all ease;
+			cursor: pointer;
+
+			.display (block);
+			.size (100%, 40px);
+			.font (15px, 20px);
+
+			&:hover {
+				background-color: fade(@white, 10);
+			}
+
+			option {
+				color: @black;
+
+				.font (14px, 20px);
+			}
+		}
 	}
 
-	&--page {
-		float: left;
+	&--label {
+		padding: 6px 15px 3px;
+		border-bottom: 1px solid fade(@white, 10);
+
+		.font (14px, 20px);
 	}
 }
 
-.p-frame {
+.frame {
 	z-index: 1;
 
 	.position (relative);

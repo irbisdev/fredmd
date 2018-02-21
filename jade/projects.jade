@@ -6,18 +6,23 @@ html
 	+head ('Projects — ' + name)
 
 	body
-		.p-page#projects
-			.p-header(v-if="dataLoaded")
-				a(href=home).p-header--back Return to Fred.md
+		.projects#projects
+			.toolbox(v-if="dataLoaded")
+				a(href=home).toolbox--back Return to Fred.md
 
-				.p-header--project: select(v-model="selectedProject" @change="selectPage")
-					option(value="-1" disabled selected) Выберите проект
-					option(v-for="(project, index) in projects" v-bind:value="index") {{ project.name }}
+				.toolbox--in
+					.toolbox--label Project:
 
-				.p-header--page: select(v-if="canRender()" v-model="selectedPage")
-					option(v-for="page in projects[selectedProject].pages" v-bind:value="page") {{ page }}
+					select(v-model="selectedProject" @change="selectPage")
+						option(v-for="(project, index) in projects" v-bind:value="index") {{ project.name }}
 
-			.p-frame(v-if="dataLoaded")
+				.toolbox--in(v-if="canRender()")
+					.toolbox--label Page:
+
+					select(v-model="selectedPage")
+						option(v-for="page in projects[selectedProject].pages" v-bind:value="page") {{ page }}
+
+			.frame(v-if="dataLoaded")
 				iframe(v-if="canRender()" v-bind:src="getPage()")
 
 		script(type="text/javascript" src="js/vue.js")

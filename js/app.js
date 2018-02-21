@@ -23,7 +23,8 @@ var app = new Vue({
 					if (!!response.body) {
 						this.projects = response.body.data;
 
-						this.selectedProject = -1;
+						this.selectedProject = 0;
+						this.selectedPage = this.getProject().pages[0];
 
 						this.dataLoaded = true;
 					}
@@ -39,7 +40,7 @@ var app = new Vue({
 			},
 
 			getPage: function () {
-				return this.server + '/examples/' + this.getProject().slug + '/' + this.selectedPage;
+				return this.server + '/examples/' + this.getProject().slug + '/' + this.selectedPage + '.html';
 			},
 
 			canRender: function () {

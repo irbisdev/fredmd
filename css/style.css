@@ -253,7 +253,9 @@ body {
 }
 body input,
 body textarea,
-body button {
+body button,
+body select,
+body option {
   font-family: 'Cuprum', arial, sans-serif;
 }
 body *,
@@ -927,7 +929,7 @@ body *:after {
 }
 .form {
   text-align: center;
-  padding: 140px 0;
+  padding: 140px 0 180px;
 }
 .form--in {
   margin: 0 auto;
@@ -942,46 +944,91 @@ body *:after {
   max-width: 250px;
   max-height: initial;
 }
-.p-page {
+.projects {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
 }
-.p-header {
-  background: #ffffff;
-  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+.toolbox {
+  background: #262626;
   z-index: 2;
+  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   top: auto;
   right: auto;
   bottom: auto;
   left: auto;
-  *zoom: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   width: auto;
-  height: 60px;
+  height: 70px;
 }
-.p-header:after {
-  clear: both;
+.toolbox--back {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 20px 45px;
+  background: url(../icons/back.svg) 20px 29px no-repeat;
+  -webkit-background-size: auto 10px;
+  background-size: auto 10px;
+  -webkit-transition: 300ms all ease;
+  -o-transition: 300ms all ease;
+  transition: 300ms all ease;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: block;
+  font-size: 18px;
+  line-height: 30px;
 }
-.p-header:before,
-.p-header:after {
-  content: " ";
-  display: table;
+.toolbox--back:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
-.p-header--back {
-  float: left;
+.toolbox--in {
+  color: #ffffff;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  width: 250px;
+  height: auto;
 }
-.p-header--project {
-  float: left;
+.toolbox--in select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: url(../icons/down.svg) right center no-repeat;
+  -webkit-background-size: auto 6px;
+  background-size: auto 6px;
+  color: #ffffff;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 11px 15px 9px;
+  -webkit-transition: 300ms all ease;
+  -o-transition: 300ms all ease;
+  transition: 300ms all ease;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 40px;
+  font-size: 15px;
+  line-height: 20px;
 }
-.p-header--page {
-  float: left;
+.toolbox--in select:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
-.p-frame {
+.toolbox--in select option {
+  color: #000000;
+  font-size: 14px;
+  line-height: 20px;
+}
+.toolbox--label {
+  padding: 6px 15px 3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  line-height: 20px;
+}
+.frame {
   z-index: 1;
   position: relative;
   top: auto;
@@ -992,7 +1039,7 @@ body *:after {
   height: -webkit-calc(100% - 60px);
   height: calc(100% - 60px);
 }
-.p-frame iframe {
+.frame iframe {
   display: block;
   width: 100%;
   height: 100%;
