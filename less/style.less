@@ -286,7 +286,10 @@ body {
 		@media @media-xs-only { opacity: 0.5; }
 	}
 
-	&:hover:before { opacity: 0; }
+	@media @media-sm-only {
+		&:hover:before { opacity: 0; }
+	}
+
 	span { z-index: 2;
 		.display (block);
 		.position-tl (absolute, 25px, 25px);
@@ -295,7 +298,7 @@ body {
 		@media @media-xs-only { .position-tl (absolute, 20px, 20px); }
 	}
 
-	&.is-first { color: @black;
+	&.is-resume { color: @black;
 		span { .position (absolute, 25px, 25px);
 			@media @media-xs-only { .position (absolute, 20px, 20px); }
 		}
