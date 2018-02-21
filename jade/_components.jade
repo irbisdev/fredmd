@@ -5,6 +5,29 @@ mixin yandex-counter
 
 	noscript: div: img(src="https://mc.yandex.ru/watch/47608978" style="position:absolute; left:-9999px;" alt="")
 
+mixin head (pageTitle)
+	head
+		meta(charset="utf-8")
+
+		title= pageTitle
+
+		meta(name="description" content=meta_description)
+		meta(name="keywords" content=meta_keywords)
+
+		meta(property="og:title" content=og_title)
+		meta(property="og:url" content=og_url)
+		meta(property="og:description" content=og_description)
+		meta(property="og:image" content=og_image)
+
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no")
+		meta(name="format-detection" content="telephone=no")
+
+		link(rel="shortcut icon" href="favicon.png" type="image/png")
+
+		link(rel="stylesheet" type="text/css" href='css/style.css?ver=' + css_version)
+
+		block
+
 mixin header
 	header.header&attributes(attributes)
 		.header--btns.left
