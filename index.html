@@ -1,28 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>Fred Morozov - Front End Developer</title>
-    <meta name="description" content="Hi. I'm Fred, I make sites. Front End developer located in Russia.">
-    <meta name="keywords" content="Developer, Front End, Front End Developer, React, Jade, LESS, CSS, HTML, React.js">
-    <meta property="og:title" content="Fred Morozov - Front End Developer">
-    <meta property="og:url" content="https://fred.md/">
-    <meta property="og:description" content="Hi. I'm Fred, I make sites. Front End developer located in Russia.">
-    <meta property="og:image" content="https://fred.md/img/og.jpg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="css/style.css?ver=5">
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title>Fred Morozov — Frontend Developer</title>
+    <meta name="description" content="Hi. I'm Fred, I make sites. Frontend developer located in Russia."/>
+    <meta name="keywords" content="Developer, Front End, Frontend, Front-End, Front End Developer, Front-End Developer, Frontend Developer, React, React.js, Vue, Vue.js, Jade, LESS, CSS, HTML"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://fred.md/"/>
+    <meta property="og:title" content="Fred Morozov — Frontend Developer"/>
+    <meta property="og:image" content="https://fred.md/img/og.jpg"/>
+    <meta property="og:description" content="Hi. I'm Fred, I make sites. Frontend developer located in Russia."/>
+    <meta property="og:site_name" content="Fred Morozov — Frontend Developer"/>
+    <meta property="og:locale" content="ru_RU"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@fredmorozov"/>
+    <meta name="twitter:creator" content="@fredmorozov"/>
+    <meta name="twitter:url" content="https://fred.md/"/>
+    <meta name="twitter:title" content="Fred Morozov — Frontend Developer"/>
+    <meta name="twitter:description" content="Hi. I'm Fred, I make sites. Frontend developer located in Russia."/>
+    <meta name="twitter:image" content="https://fred.md/img/og.jpg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="icon" type="image/png" href="/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css?ver=6"/>
   </head>
   <body>
     <div class="page">
-      <div class="page--in">
-        <div class="page--title">Fred Morozov</div>
-        <div class="page--socials"><a class="social" href="https://github.com/irbisdev" target="_blank"><i class="icon-gh"></i></a><a class="social" href="https://telegram.me/fredmd" target="_blank"><i class="icon-tg"></i></a><a class="social" href="https://instagram.com/irbisdev" target="_blank"><i class="icon-ig"></i></a><a class="social" href="mailto:morozov@fred.md"><i class="icon-em"></i></a>
+      <header class="header">
+        <div class="header--logo">Fred Morozov<span>Frontend Developer</span></div>
+        <div class="header--btns hidden-xs">
+          <div class="btn-group"><a href="https://github.com/irbisdev" target="_blank" rel="noopener noreferrer">github</a><a href="https://telegram.me/fredmd" target="_blank" rel="noopener noreferrer">telegram</a>
+          </div>
         </div>
-        <div class="page--btn"><a class="btn" href="https://fred.md/Fred_Morozov_Resume.pdf" target="_blank"><i class="icon-pdf"></i>Open resume</a></div>
+        <div class="header--btns hidden-xs"><a class="btn" href="mailto:morozov@fred.md">morozov@fred.md</a></div>
+        <div class="header--btns visible-xs">
+          <div class="btn-group"><a href="https://github.com/irbisdev" target="_blank" rel="noopener noreferrer">github</a><a href="https://telegram.me/fredmd" target="_blank" rel="noopener noreferrer">telegram</a><a href="https://mailto:morozov@fred.md" target="_blank" rel="noopener noreferrer">email</a>
+          </div>
+        </div>
+      </header>
+      <div class="tiles">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6"><a class="tile" href="/projects/" style="background-image: url(img/tile-02.jpg);"><span>View projects</span></a>
+          </div>
+          <div class="col-xs-12 col-sm-6"><a class="tile is-resume" href="/Fred_Morozov_Resume.pdf" style="background-image: url(img/tile-01.jpg);"><span>View resume</span></a>
+          </div>
+        </div>
       </div>
-      <div class="copyrights"><span>Via Luigi Maria Brunelli, Milan, Italy</span><br> Photo by <span>F. Morozov</span></div>
+      <div class="photos">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div class="photo" style="background-image: url(img/photo-01.jpg);">
+              <div class="copyrights"><span>Via Dogana</span><br/>Milan, Italy</div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="photo" style="background-image: url(img/photo-02.jpg);">
+              <div class="copyrights"><span>Campo San Rocco</span><br/>Venice, Italy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form">
+        <form class="form--in" method="POST" action="https://api.fred.md/mail">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <div class="form--field">
+                <input class="input" type="text" name="name" autocomplete="name" placeholder="Your name">
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <div class="form--field">
+                <input class="input" type="text" name="mail" autocomplete="email" placeholder="Your E-mail">
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="form--field">
+                <textarea class="textarea" name="text" placeholder="Message"></textarea>
+              </div>
+              <div class="form--submit">
+                <button class="btn is-large is-block" type="submit">Send letter</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
     <!-- Yandex.Metrika counter-->
     <script type="text/javascript">
@@ -30,7 +95,33 @@
       
     </script>
     <noscript>
-      <div><img src="https://mc.yandex.ru/watch/47608978" style="position:absolute; left:-9999px;" alt=""></div>
+      <div><img src="https://mc.yandex.ru/watch/47608978" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+      
+      	$('.form--in').on('submit', function (e) {
+      		e.preventDefault();
+      
+      		var form = $(this);
+      
+      		$.ajax({
+      			url: form.attr('action'),
+      			method: form.attr('method'),
+      			data: form.serialize(),
+      			dataType: 'text',
+      
+      			success: function (r) {
+      				form.closest('.form').addClass('is-success');
+      				form.html('Thank you! I will write to you shortly.');
+      			}
+      		});
+      
+      		return false;
+      	});
+      
+      });
+    </script>
   </body>
 </html>

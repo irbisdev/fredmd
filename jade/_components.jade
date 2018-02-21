@@ -1,0 +1,60 @@
+mixin yandex-counter
+	// Yandex.Metrika counter
+	script(type="text/javascript").
+		(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47608978 = new Ya.Metrika({ id:47608978, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");
+
+	noscript: div: img(src="https://mc.yandex.ru/watch/47608978" style="position:absolute; left:-9999px;" alt="")
+
+mixin head (pageTitle)
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+
+		title= pageTitle
+
+		meta(name="description" content=meta_description)
+		meta(name="keywords" content=meta_keywords)
+
+		meta(property="og:type" content="website")
+		meta(property="og:url" content=og_url)
+		meta(property="og:title" content=og_title)
+		meta(property="og:image" content=og_image)
+		meta(property="og:description" content=og_description)
+		meta(property="og:site_name" content=og_title)
+		meta(property="og:locale" content="ru_RU")
+		meta(property="og:image:width" content="1200")
+		meta(property="og:image:height" content="630")
+
+		meta(name="twitter:card" content="summary")
+		meta(name="twitter:site" content='@' + twitter)
+		meta(name="twitter:creator" content='@' + twitter)
+		meta(name="twitter:url" content=og_url)
+		meta(name="twitter:title" content=og_title)
+		meta(name="twitter:description" content=og_description)
+		meta(name="twitter:image" content=og_image)
+
+		meta(name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover")
+		meta(name="format-detection" content="telephone=no")
+
+		link(rel="icon" type="image/x-icon" href="/favicon.ico")
+		link(rel="icon" type="image/png" href="/favicon.png")
+
+		link(rel="stylesheet" type="text/css" href='/css/style.css?ver=' + css_version)
+
+		block
+
+mixin btn-group (items)
+	.btn-group
+		each item in items
+			a(href='https://' + item.url target="_blank" rel="noopener noreferrer")= item.caption
+
+mixin photo (photoID, street, city)
+	.photo(style='background-image: url(img/photo-' + photoID + '.jpg)')&attributes(attributes)
+		+copyrights (street, city)
+
+mixin copyrights (street, city)
+	.copyrights&attributes(attributes) #[span #{street}]#[br]#{city}, Italy
+
+mixin tile (link, photoID, caption)
+	a(href=link style='background-image: url(img/tile-' + photoID + '.jpg)').tile&attributes(attributes)
+		span= caption
