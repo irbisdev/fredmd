@@ -2,7 +2,7 @@ include ./_variables.jade
 include ./_components.jade
 
 doctype html
-html
+html(lang="en")
 	+head ('Projects — ' + name)
 
 	body
@@ -25,8 +25,8 @@ html
 			.frame(v-if="dataLoaded")
 				iframe(v-if="canRender()" v-bind:src="getPage()")
 
-		script(type="text/javascript" src="js/vue.js")
-		script(type="text/javascript" src="js/vue-resource.js")
-		script(type="text/javascript" src="js/app.js")
+		script(type="text/javascript" src="/js/vue.js")
+		script(type="text/javascript" src="/js/vue-resource.js")
+		script(type="text/javascript" src="/js/app.js")
 
 		+yandex-counter
