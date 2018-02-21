@@ -758,14 +758,20 @@ body *:after {
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
 }
 .page {
-  padding: 140px 30px 0 30px;
+  padding: 0 30px 0 30px;
+}
+@media (max-width: 767px) {
+  .page {
+    padding: 0;
+    overflow: hidden;
+  }
 }
 .header {
-  position: absolute;
-  top: 0;
-  right: 30px;
+  position: relative;
+  top: auto;
+  right: auto;
   bottom: auto;
-  left: 30px;
+  left: auto;
   *zoom: 1;
 }
 .header:after {
@@ -775,6 +781,11 @@ body *:after {
 .header:after {
   content: " ";
   display: table;
+}
+@media (max-width: 767px) {
+  .header {
+    padding: 0 0 40px;
+  }
 }
 .header--logo {
   z-index: 1;
@@ -787,6 +798,16 @@ body *:after {
   right: 0;
   bottom: auto;
   left: 0;
+}
+@media (max-width: 767px) {
+  .header--logo {
+    padding: 30px 0 30px;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
 }
 .header--logo span {
   opacity: 0.6;
@@ -802,6 +823,23 @@ body *:after {
   right: auto;
   bottom: auto;
   left: auto;
+}
+@media (max-width: 767px) {
+  .header--btns {
+    padding: 0;
+    float: none!important;
+    text-align: center;
+  }
+  .header--btns .btn-group {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+.header--btns:nth-child(2) {
+  float: left;
+}
+.header--btns:nth-child(3) {
+  float: right;
 }
 .social {
   padding: 0 16px;
@@ -843,6 +881,11 @@ body *:after {
   bottom: auto;
   left: auto;
 }
+@media (max-width: 767px) {
+  .tile {
+    margin: 0 0 10px;
+  }
+}
 .tile:before {
   content: "";
   background: grey;
@@ -858,6 +901,11 @@ body *:after {
   left: 0;
   display: block;
 }
+@media (max-width: 767px) {
+  .tile:before {
+    opacity: 0.5;
+  }
+}
 .tile:hover:before {
   opacity: 0;
 }
@@ -872,6 +920,15 @@ body *:after {
   font-size: 26px;
   line-height: 20px;
 }
+@media (max-width: 767px) {
+  .tile span {
+    position: absolute;
+    top: 20px;
+    right: auto;
+    bottom: auto;
+    left: 20px;
+  }
+}
 .tile.is-first {
   color: #000000;
 }
@@ -881,6 +938,15 @@ body *:after {
   right: 25px;
   bottom: auto;
   left: auto;
+}
+@media (max-width: 767px) {
+  .tile.is-first span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    bottom: auto;
+    left: auto;
+  }
 }
 .photo {
   background: lightgrey center center no-repeat;
@@ -893,6 +959,11 @@ body *:after {
   right: auto;
   bottom: auto;
   left: auto;
+}
+@media (max-width: 767px) {
+  .photo {
+    margin: 0 0 10px;
+  }
 }
 .photo:before {
   content: "";
@@ -918,18 +989,20 @@ body *:after {
   font-size: 14px;
   line-height: 20px;
 }
-@media (max-width: 767px) {
-  .copyrights {
-    font-size: 13px;
-    line-height: 20px;
-  }
-}
 .copyrights span {
   color: #ffffff;
 }
 .form {
   text-align: center;
   padding: 140px 0 180px;
+}
+@media (max-width: 767px) {
+  .form {
+    padding: 70px 20px;
+    margin: 0 auto;
+    max-width: 400px;
+    max-height: initial;
+  }
 }
 .form--in {
   margin: 0 auto;
@@ -939,10 +1012,21 @@ body *:after {
 .form--field {
   margin: 0 0 30px;
 }
+@media (max-width: 767px) {
+  .form--field {
+    margin: 0 0 20px;
+  }
+}
 .form--submit {
   margin: 0 auto;
   max-width: 250px;
   max-height: initial;
+}
+@media (max-width: 767px) {
+  .form--submit {
+    max-width: initial;
+    max-height: initial;
+  }
 }
 .projects {
   position: fixed;
@@ -968,6 +1052,19 @@ body *:after {
   width: auto;
   height: 70px;
 }
+@media (max-width: 767px) {
+  .toolbox {
+    padding: 0 0 0 70px;
+    display: block;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    height: 81px;
+  }
+}
 .toolbox--back {
   color: #ffffff;
   text-decoration: none;
@@ -983,6 +1080,21 @@ body *:after {
   font-size: 18px;
   line-height: 30px;
 }
+@media (max-width: 767px) {
+  .toolbox--back {
+    padding: 0;
+    background-position: center center;
+    font-size: 0;
+    line-height: 0;
+    width: 70px;
+    height: 81px;
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+  }
+}
 .toolbox--back:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -991,6 +1103,26 @@ body *:after {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   width: 250px;
   height: auto;
+}
+@media (max-width: 767px) {
+  .toolbox--in {
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: auto;
+    height: auto;
+    *zoom: 1;
+  }
+  .toolbox--in:after {
+    clear: both;
+  }
+  .toolbox--in:before,
+  .toolbox--in:after {
+    content: " ";
+    display: table;
+  }
+  .toolbox--in:last-child {
+    border: none;
+  }
 }
 .toolbox--in select {
   -webkit-appearance: none;
@@ -1003,7 +1135,7 @@ body *:after {
   color: #ffffff;
   -webkit-border-radius: 0;
   border-radius: 0;
-  padding: 11px 15px 9px;
+  padding: 11px 35px 9px 15px;
   -webkit-transition: 300ms all ease;
   -o-transition: 300ms all ease;
   transition: 300ms all ease;
@@ -1013,6 +1145,14 @@ body *:after {
   height: 40px;
   font-size: 15px;
   line-height: 20px;
+}
+@media (max-width: 767px) {
+  .toolbox--in select {
+    float: left;
+    width: -webkit-calc(100% - 65px);
+    width: calc(100% - 65px);
+    height: 40px;
+  }
 }
 .toolbox--in select:hover {
   background-color: rgba(255, 255, 255, 0.1);
@@ -1028,6 +1168,18 @@ body *:after {
   font-size: 14px;
   line-height: 20px;
 }
+@media (max-width: 767px) {
+  .toolbox--label {
+    float: left;
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 10px 4px;
+    width: 65px;
+    height: auto;
+    font-size: 14px;
+    line-height: 30px;
+  }
+}
 .frame {
   z-index: 1;
   position: relative;
@@ -1036,8 +1188,15 @@ body *:after {
   bottom: auto;
   left: auto;
   width: auto;
-  height: -webkit-calc(100% - 60px);
-  height: calc(100% - 60px);
+  height: -webkit-calc(100% - 70px);
+  height: calc(100% - 70px);
+}
+@media (max-width: 767px) {
+  .frame {
+    width: auto;
+    height: -webkit-calc(100% - 81px);
+    height: calc(100% - 81px);
+  }
 }
 .frame iframe {
   display: block;

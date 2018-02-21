@@ -28,16 +28,6 @@ mixin head (pageTitle)
 
 		block
 
-mixin header
-	header.header&attributes(attributes)
-		.header--btns.left
-			+btn-group ([{url: github, caption: 'github'}, {url: telegram, caption: 'telegram'}])
-
-		.header--logo= name
-			span= position
-
-		.header--btns.right: a(href='mailto:' + email).btn morozov@fred.md
-
 mixin btn-group (items)
 	.btn-group
 		each item in items

@@ -7,7 +7,12 @@ html
 
 	body
 		.page
-			+header
+			header.header
+				.header--logo #{name}#[span= position]
+				.header--btns.hidden-xs: +btn-group ([{url: github, caption: 'github'}, {url: telegram, caption: 'telegram'}])
+				.header--btns.hidden-xs: a(href='mailto:' + email).btn morozov@fred.md
+
+				.header--btns.visible-xs: +btn-group ([{url: github, caption: 'github'}, {url: telegram, caption: 'telegram'}, {url: 'mailto:' + email, caption: 'email'}])
 
 			.tiles: .row
 				.col-xs-12.col-sm-6: +tile (resume, '01', 'View resume').is-first
