@@ -97,31 +97,5 @@
     <noscript>
       <div><img src="https://mc.yandex.ru/watch/47608978" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
-    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
-    <script>
-      $(document).ready(function () {
-      
-      	$('.form--in').on('submit', function (e) {
-      		e.preventDefault();
-      
-      		var form = $(this);
-      
-      		$.ajax({
-      			url: form.attr('action'),
-      			method: form.attr('method'),
-      			data: form.serialize(),
-      			dataType: 'text',
-      
-      			success: function (r) {
-      				form.closest('.form').addClass('is-success');
-      				form.html('Thank you! I will write to you shortly.');
-      			}
-      		});
-      
-      		return false;
-      	});
-      
-      });
-    </script>
   </body>
 </html>
