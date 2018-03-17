@@ -39,7 +39,7 @@ mixin head (pageTitle)
 mixin btn-group (items)
 	.btn-group
 		each item in items
-			a(href='https://' + item.url target="_blank" rel="noopener noreferrer")= item.caption
+			a(href=item.url target="_blank" rel="noopener noreferrer")= item.caption
 
 mixin photo (photoID, street, city)
 	.photo(style='background-image: url(img/photo-' + photoID + '.jpg)')&attributes(attributes)
