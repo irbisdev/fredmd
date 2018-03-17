@@ -5,28 +5,24 @@ doctype html
 html(lang="en")
 	+head (title)
 
-	body
-		.page
-			header.header
-				.header--logo #{name}#[span= position]
-				.header--btns.hidden-xs: +btn-group ([{url: github, caption: 'github'}, {url: telegram, caption: 'telegram'}])
-				.header--btns.hidden-xs: a(href='mailto:' + email).btn morozov@fred.md
+	body: .page
+		header.header
+			.header--logo #{name}#[span= position]
+			.header--btns.hidden-xs: +btn-group ([{url: github, caption: 'github'}, {url: telegram, caption: 'telegram'}])
+			.header--btns.hidden-xs: a(href='mailto:' + email).btn morozov@fred.md
+			.header--btns.visible-xs: +btn-group ([{url: github, caption: 'github'}, {url: telegram, caption: 'telegram'}, {url: 'mailto:' + email, caption: 'email'}])
 
-				.header--btns.visible-xs: +btn-group ([{url: github, caption: 'github'}, {url: telegram, caption: 'telegram'}, {url: 'mailto:' + email, caption: 'email'}])
+		.tiles: .row
+			.col-xs-12.col-sm-6.hidden-xs: +tile (projects, '02', 'View projects')
+			.col-xs-12.col-sm-6: +tile (resume, '01', 'View resume').is-resume(target="_blank" rel="noopener noreferrer")
 
-			.tiles: .row
-				.col-xs-12.col-sm-6.hidden-xs: +tile (projects, '02', 'View projects')
-				.col-xs-12.col-sm-6: +tile (resume, '01', 'View resume').is-resume(target="_blank" rel="noopener noreferrer")
+		.photos: .row
+			.col-xs-12.col-sm-6: +photo ('01', 'Via Dogana', 'Milan')
+			.col-xs-12.col-sm-6: +photo ('02', 'Campo San Rocco', 'Venice')
 
-			.photos: .row
-				.col-xs-12.col-sm-6: +photo ('01', 'Via Dogana', 'Milan')
-				.col-xs-12.col-sm-6: +photo ('02', 'Campo San Rocco', 'Venice')
-
-			.form: form(method="POST" data-netlify="true" name="feedback").form--in: .row
-				.col-xs-12.col-sm-6: .form--field: input(type="text" name="name" autocomplete="name" placeholder="Your name").input
-				.col-xs-12.col-sm-6: .form--field: input(type="text" name="mail" autocomplete="email" placeholder="Your E-mail").input
-				.col-xs-12
-					.form--field: textarea(name="text" placeholder="Message").textarea
-					.form--submit: button(type="submit").btn.is-large.is-block Send letter
-
-		+yandex-counter
+		.form: form(method="POST" data-netlify="true" name="feedback").form--in: .row
+			.col-xs-12.col-sm-6: .form--field: input(type="text" name="name" autocomplete="name" placeholder="Your name").input
+			.col-xs-12.col-sm-6: .form--field: input(type="text" name="mail" autocomplete="email" placeholder="Your E-mail").input
+			.col-xs-12
+				.form--field: textarea(name="text" placeholder="Message").textarea
+				.form--submit: button(type="submit").btn.is-large.is-block Send letter
