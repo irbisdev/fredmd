@@ -22,7 +22,7 @@ html(lang="en")
 				.col-xs-12.col-sm-6: +photo ('01', 'Via Dogana', 'Milan')
 				.col-xs-12.col-sm-6: +photo ('02', 'Campo San Rocco', 'Venice')
 
-			.form: form(method="POST" action=feedback).form--in: .row
+			.form: form(method="POST" data-netlify="true" name="feedback").form--in: .row
 				.col-xs-12.col-sm-6: .form--field: input(type="text" name="name" autocomplete="name" placeholder="Your name").input
 				.col-xs-12.col-sm-6: .form--field: input(type="text" name="mail" autocomplete="email" placeholder="Your E-mail").input
 				.col-xs-12
