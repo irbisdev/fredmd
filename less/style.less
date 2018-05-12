@@ -363,7 +363,14 @@ body {
 	}
 
 	&--captcha { margin: 0 auto;
-		.size (304px);
+		.size (300px);
+
+		@media @media-xs-only {
+			transform: translate(-50%, 0);
+			margin: 0;
+
+			.position-tl (relative, auto, ~'calc(50vw - 20px)');
+		}
 	}
 }
 
