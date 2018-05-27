@@ -40,7 +40,7 @@ var app = new Vue({
 			},
 
 			getPage: function () {
-				return this.server + '/examples/' + this.getProject().slug + '/' + this.selectedPage + '.html';
+				return this.server + '/projects/' + this.getProject().slug + '/' + this.selectedPage + '.html';
 			},
 
 			canRender: function () {
