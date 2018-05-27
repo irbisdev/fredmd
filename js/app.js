@@ -1,7 +1,7 @@
 var app = new Vue({
 		el: '#projects',
 		data: {
-			server: 'https://api.fred.md',
+			server: 'http://api.fred.md',
 
 			dataLoaded: false,
 			projects: null,
