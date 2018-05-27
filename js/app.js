@@ -1,7 +1,7 @@
 var app = new Vue({
 		el: '#projects',
 		data: {
-			server: 'http://api.fred.md',
+			server: '//api.fred.md',
 
 			dataLoaded: false,
 			projects: null,
@@ -19,7 +19,7 @@ var app = new Vue({
 			},
 
 			loadProjects: function () {
-				this.$http.get(this.server + '/projects').then((response) => {
+				this.$http.get(this.server + '/examples/').then((response) => {
 					if (!!response.body) {
 						this.projects = response.body.data;
 
