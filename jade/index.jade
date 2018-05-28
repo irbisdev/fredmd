@@ -19,11 +19,3 @@ html(lang="en")
 		.photos: .row
 			.col-xs-12.col-sm-6: +photo ('01', 'Via Dogana', 'Milan')
 			.col-xs-12.col-sm-6: +photo ('02', 'Campo San Rocco', 'Venice')
-
-		.form: form(method="POST" data-netlify="true" name="feedback").form--in: .row
-			.col-xs-12.col-sm-6: .form--field: input(type="text" name="name" required autocomplete="name" placeholder="Your name").input
-			.col-xs-12.col-sm-6: .form--field: input(type="text" name="mail" required autocomplete="email" placeholder="Your E-mail").input
-			.col-xs-12
-				.form--field: textarea(name="text" required placeholder="Message").textarea
-				.form--field: .form--captcha(data-netlify-recaptcha)
-				.form--submit: button(type="submit").btn.is-large.is-block Send letter
