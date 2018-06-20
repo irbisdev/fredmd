@@ -6,6 +6,7 @@ var minifyCSS = require('gulp-csso');
 var pug = require('gulp-pug');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var autoprefixer = require('gulp-autoprefixer');
 
 var runSequence = require('run-sequence');
 var server = require('gulp-server-livereload');
@@ -26,6 +27,7 @@ gulp.task('css', function () {
 
 	return gulp.src(['./src/less/style.less'])
 		.pipe(less())
+		.pipe(autoprefixer({ browsers: ['last 20 versions'] }))
 		.pipe(minifyCSS())
 		.pipe(rename('style.min.css'))
 		.pipe(gulp.dest('./static/css'));
