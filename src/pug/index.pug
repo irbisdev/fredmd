@@ -49,7 +49,10 @@ html(lang="en")
 		.loader: .loader--spinner
 		.page
 			header.header
-				.header--logo #{name}#[span #{position} @ #[a(href=company_url)= company]]
+				.header--logo #{name}#[span #{position}]
+
+				//- .header--logo #{name}#[span #{position} @ #[a(href=company_url)= company]]
+
 				.header--btns.hidden-xs: +btn-group ([{url: github, caption: 'github'}, {url: telegram, caption: 'telegram'}])
 				.header--btns.hidden-xs: a(href='mailto:' + email).btn morozov@fred.md
 				.header--btns.visible-xs: +btn-group ([{url: github, caption: 'github'}, {url: telegram, caption: 'telegram'}, {url: 'mailto:' + email, caption: 'email'}])
