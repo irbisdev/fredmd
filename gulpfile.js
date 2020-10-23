@@ -8,7 +8,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var autoprefixer = require('gulp-autoprefixer');
 
-var runSequence = require('run-sequence');
+var runSequence = require('gulp4-run-sequence');
 var server = require('gulp-server-livereload');
 var watch = require('gulp-watch');
 var batch = require('gulp-batch');
@@ -33,7 +33,7 @@ gulp.task('css', function () {
 		.pipe(gulp.dest('./static/css'));
 });
 
-gulp.task('js', function() {
+gulp.task('js', function () {
 	// Concat JS
 
 	return gulp.src(['./src/js/vue.min.js', './src/js/vue-resource.js', './src/js/app.js'])
@@ -68,16 +68,14 @@ gulp.task('build', function (callback) {
 
 
 
-// Watch and server with livereload
+// Server with livereload
 
-gulp.task('watch', function () {
+gulp.task('server', function () {
 	watch('./src/**', batch(function (events, done) {
-		gulp.start('build', done);
+		runSequence('build', done);
 	}));
-});
 
-gulp.task('server', ['watch'], function () {
-	gulp.src('./')
+	return gulp.src('./')
 		.pipe(server({
 			livereload: true,
 			directoryListing: true,
