@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /projects
-Disallow: /projects.html
-Disallow: /projects/
