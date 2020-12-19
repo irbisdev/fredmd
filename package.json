@@ -1,34 +1,45 @@
 {
     "name": "fred.site",
     "version": "1.0.0",
+    "author": "Fred Morozov <morozov@fred.md>",
     "description": "Personal portfolio",
+    "keywords": [],
+    "homepage": "https://fred.md/",
+    "license": "ISC",
+    "alias": {
+        "&app": "./src"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.10",
+        "@rfgamaral/parcel-plugin-typings-for-css-modules": "^1.0.4",
+        "@types/react": "^17.0.0",
+        "@types/react-dom": "^17.0.0",
+        "parcel-bundler": "^1.12.4",
+        "postcss-modules": "^4.0.0",
+        "react-snap": "^1.23.0",
+        "typescript": "^4.1.3"
+    },
+    "dependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-router5": "^8.0.1",
+        "router5": "^8.0.1",
+        "router5-plugin-browser": "^8.0.1"
+    },
     "private": true,
     "repository": {
         "type": "git",
         "url": "git+https://irbisdev@github.com/irbisdev/fred.site.git"
     },
-    "keywords": [],
-    "author": "Fred Morozov",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/irbisdev/fred.site/issues"
+    "scripts": {
+        "build": "rm -rf dist && parcel build src/index.html",
+        "dev": "parcel src/index.html"
     },
-    "homepage": "https://fred.md/",
-    "devDependencies": {
-        "gulp": "^4.0.2",
-        "gulp-autoprefixer": "^5.0.0",
-        "gulp-batch": "^1.0.5",
-        "gulp-clean": "^0.4.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-csso": "^3.0.1",
-        "gulp-less": "^3.5.0",
-        "gulp-pug": "^4.0.1",
-        "gulp-rename": "^1.3.0",
-        "gulp-server-livereload": "^1.9.2",
-        "gulp-uglify": "^3.0.0",
-        "gulp-util": "^3.0.8",
-        "gulp-watch": "^5.0.0",
-        "gulp4-run-sequence": "^1.0.1"
-    },
-    "dependencies": {}
+    "reactSnap": {
+        "source": "dist",
+        "minifyHtml": {
+            "collapseWhitespace": false,
+            "removeComments": true
+        }
+    }
 }
